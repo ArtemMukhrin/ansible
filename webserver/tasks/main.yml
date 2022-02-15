@@ -1,2 +1,7 @@
 ---
 # tasks file for webserver
+
+- name: Ensure tomcat package is present
+  apt:
+    name: tomcat9
+    state: present

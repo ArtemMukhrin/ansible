@@ -1,2 +1,12 @@
 ---
 # tasks file for java_project
+
+- name: Ensure java project is present
+  git:
+    repo: https://github.com/boxfuse/boxfuse-sample-java-war-hello
+    dest: /home/ubuntu/boxfuse
+    clone: yes
+    update: yes
+
+- name: Ensure project is packaged
+  command: mvn -f /home/ubuntu/boxfuse/pom.xml package
